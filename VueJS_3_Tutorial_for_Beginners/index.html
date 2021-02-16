@@ -12,6 +12,16 @@
     <h1>Hello, Vue :-)</h1>
     <div id="app">
         <h2>{{ title }}</h2>
+        <p>{{ body }}</p>
+        <div v-if="showButtons">
+            <button @click="click($event, 'Hello 1')">Click</button>
+            <button @click="click($event, 'Hello 2')">Click</button>
+            <button @click="click($event, 'Hello 3')">Click</button>
+        </div>
+        <button @click="toggleButtons">
+            <span v-if="showButtons">Hide Buttons</span>
+            <span v-if="!showButtons">Show Buttons</span>
+        </button>
     </div>
     <script src="app.js"></script>
 </body>
